@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "532625029682",
+    "firebase_url": "https://fir-realtimedatabasetest.firebaseio.com",
+    "project_id": "fir-realtimedatabasetest",
+    "storage_bucket": "fir-realtimedatabasetest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532625029682:android:cb9c9055bf7c1b30",
+        "android_client_info": {
+          "package_name": "com.commutingcoder.firebaserealtimedatabasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532625029682-qqtjiaa5ej8fbmrurn9jnq16uparjgid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDJvdIu7we2yvuPHZIgeLejI2xeXywTKI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
