@@ -100,7 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mMyPosition.setLongitude(Double.valueOf(s.toString()));
+                try {
+                    Double d = Double.parseDouble(s.toString());
+                    mMyPosition.setLongitude(Double.valueOf(s.toString()));
+                } catch (NumberFormatException ex) {
+                    // Do something smart here...
+                    mMyPosition.setLongitude(0.0);
+                }
             }
 
             @Override
@@ -108,8 +114,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        mOtherLatitudeEditText.setText(String.valueOf(mOtherPosition.getLatitude()));
-        mOtherLongitudeEditText.setText(String.valueOf(mOtherPosition.getLongitude()));
+        // TODO: check if better procedure exist
+        mMyLatitudeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus == false) {
+                    mMyLongitudeEditText.setText(String.valueOf(mMyPosition.getLongitude()));
+                }
+            }
+        });
         mUpdateMyPositionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        mOtherLatitudeEditText.setText(String.valueOf(mOtherPosition.getLatitude()));
+        mOtherLongitudeEditText.setText(String.valueOf(mOtherPosition.getLongitude()));
         mUpdateOtherPositionButton.setEnabled(false);// TODO: can we change color here?
         mUpdateOtherPositionButton.setOnClickListener(new View.OnClickListener() {
             @Override
